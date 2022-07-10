@@ -1,0 +1,248 @@
+﻿
+@{
+
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Index";
+}
+
+
+<section id="hero">
+    <div class="hero-container">
+        <h1>WELCOME THE WHOLE ROCK FAMILY</h1>
+        <h2>ARAMIZA KATILMAK İSTER MİSİN ?</h2>
+        <a href="#about" class="btn-get-started">BİLET AL</a>
+    </div>
+</section><!-- End Hero Section -->
+
+<main id="main">
+
+    <!-- ======= About Section ======= -->
+    <section id="about">
+        <div class="container">
+            <div class="row about-container">
+
+                <div class="">
+                    <h2 class="title">İSTEDİĞİN ROCK GRUBUNU SEÇ, EĞLENCEYE SENDE KATIL !</h2>
+                    <p class="text-dark">
+                        TÜM ZAMANLARIN EN İYİ GENÇLİK FESTİVALLERİNE KATILMAYA HAZIR OL !
+                    </p>
+
+                    <div class="icon-box wow fadeInUp">
+                        <div class="icon"><i class="fa fa-ticket" aria-hidden="true"></i></div>
+                        <h4 class="title"><a href="#">Bilet Seç</a></h4><br />  <br />
+                        <div class="icon"><i class="fa fa-gears" aria-hidden="true"></i></div>
+                        <h4 class="title"><a href="#">Rock Gruplarını Araştır</a></h4><br /><br />
+                        <div class="icon"><i class="fa fa-music" aria-hidden="true"></i></div><br />
+                        <h4 class="title"><a href="https://onedio.com/haber/hangi-klasik-rock-grubusun--370935">Hangi Rock Grubusun?</a></h4>
+
+                        <p class="description"></p>
+                    </div>
+
+
+
+                </div>
+
+            </div>
+    </section>
+
+    <section id="call-to-action">
+        <div class="container wow fadeIn">
+
+            @foreach (var item in ViewBag.AboutUs)
+            {
+                <div class="row">
+                    <div class="col-lg-9 text-center FontBig text-lg-left">
+                        <h3 class="cta-title">HAKKIMIZDA</h3>
+                        <h4 class="cta-text font-weight-bold ">@item.AbExp</h4>
+                    </div>
+                    <div class="col-lg-3 cta-btn-container text-center">
+                    </div>
+                </div>
+
+
+            }
+
+    </section>
+
+    <!-- ======= Services Section ======= -->
+    <section id="services">
+        <div class="container wow fadeIn">
+            <div class="section-header">
+                <h3 class="section-title">HİZMETLER</h3>
+                <p class="section-description"></p>
+            </div>
+            @foreach (var item in ViewBag.Services)
+            {
+                <div class="">
+                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.2s">
+                        <div class="box">
+                            <div class="icon"><a href=""><i class="fa fa-desktop"></i></a></div>
+                            <h4 class="title"><a href="">@item.SerHead</a></h4>
+                            <img src="~/Content/Layout/assets/img/406879-200.png" width="50" height="50" alt="@item.SerEx" />
+                        </div>
+                    </div>
+
+                </div>
+
+            }
+
+    </section><!-- End Services Section -->
+    <!-- ======= Call To Action Section ======= -->
+    <!-- End Call To Action Section -->
+    @*<section id="services1">
+            <div class="container wow fadeIn">
+                <div class="section-header">
+                    <h3 class="section-title">BLOGLAR</h3>
+                    <p class="section-description"></p>
+                </div>
+                @foreach (var item in ViewBag.Blogs)
+                {
+                    <div class="">
+                        <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.2s">
+                            <div class="box">
+                                <div class="icon"><a href=""><i class="fa fa-desktop"></i></a></div>
+                                <h5>@item.CatId</h5>
+                                <h4 class="title"><a href="">@item.BlogHead</a></h4>
+                                <img src="~/Content/Layout/assets/img/406879-200.png" width="50" height="50" alt="@item.BlogCont" />
+                            </div>
+                        </div>
+
+                    </div>
+
+                }
+
+        </section>*@
+
+
+    <!-- ======= Portfolio Section ======= -->
+
+    <section id="portfolio">
+        <div class="container wow fadeInUp">
+            <div class="section-header">
+                <h3 class="section-title">Rock Grupları</h3>
+                <p class="section-description"></p>
+            </div>
+            @foreach (var item in ViewBag.Sliders)
+            {
+                <div class="">
+
+
+
+                    <div class="" id="portfolio-wrapper">
+                        <div class="col-lg-3 col-md-6 portfolio-item filter-app">
+                            <a href="/Content/Layout/assets/img/portfolio/app1.jpg" data-gall="portfolioGallery" class="venobox">
+                                <img src="@item.ResimUrl" alt="">
+                                <div class="details">
+                                    <h4>@item.Baslik</h4>
+                                    <span>@item.Aciklama</span>
+                                </div>
+                            </a>
+                        </div>
+
+                    </div>
+
+                </div>
+            }
+
+    </section><!-- End Portfolio Section -->
+
+    <section id="facts">
+        <div class="container wow fadeIn">
+            <div class="section-header">
+                <h3 class="section-title">KATEGORİLER</h3>
+                <p class="section-description">!!!!!!!!!!!!!</p>
+            </div>
+            @foreach (var item in ViewBag.Categories)
+            {
+                <div class="">
+
+                    <div class="col-lg-3 col-6 text-center">
+
+                        <p>
+                            <font face="tahoma" size="5">
+                                <b>@item.CatName</b>
+                            </font>
+                        </p>
+                        <p>
+                            <font face="tahoma" size="2">
+                                <b>@item.CatExp</b>
+                            </font>
+                        </p>
+                    </div>
+
+
+                </div>
+
+
+            }
+
+    </section>
+    <section id="Admin">
+        <div class="container wow fadeIn">
+            <div class="section-header">
+                <a href="/Admin/Login/"></a>
+            </div>
+
+
+    </section>
+    <!-- ======= Team Section ======= -->
+    <!-- End Team Section -->
+    <!-- ======= Contact Section ======= -->
+    <section id="contact">
+        <div class="container ">
+            <div class="section-header">
+
+                <h3 class="section-title">İLETİŞİM</h3>
+                <br />
+
+
+            </div>
+
+        </div>
+
+
+
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d195884.20789874252!2d32.62268219660989!3d39.90355566389837!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14d347d520732db1%3A0xbdc57b0c0842b8d!2sAnkara!5e0!3m2!1str!2str!4v1592110702166!5m2!1str!2str" width="100%" height="380" frameborder="0" style="border:0" allowfullscreen></iframe>
+        <div class="container wow fadeInUp mt-5">
+            <div class="row justify-content-center">
+
+                <div class="col-lg-3 col-md-4">
+
+                    <div class="info">
+                        <div>
+                            <i class="fa fa-map-marker"></i>
+                            <p>101.Sokak<br>Ankara,Türkiye</p>
+                        </div>
+
+                        <div>
+                            <i class="fa fa-envelope"></i>
+                            <p>twhf@gmail.com</p>
+                        </div>
+
+                        <div>
+                            <i class="fa fa-phone"></i>
+                            <p>+90 444 333 22 11</p>
+                        </div>
+                    </div>
+
+
+
+                </div>
+
+
+                <div class="social-links">
+                    <a href="https://twitter.com/biletix" class="twitter"><i class="fa fa-twitter"></i></a>
+                    <a href="https://tr-tr.facebook.com/biletix" class="facebook"><i class="fa fa-facebook"></i></a>
+                    <a href="https://www.instagram.com/biletix/?hl=tr" class="instagram"><i class="fa fa-instagram"></i></a>
+
+                </div>
+
+
+            </div>
+
+
+        </div>
+
+    </section><!-- End Contact Section -->
+
+</main><!-- End #main -->

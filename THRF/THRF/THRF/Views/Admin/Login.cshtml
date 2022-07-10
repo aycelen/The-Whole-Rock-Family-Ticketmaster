@@ -1,0 +1,51 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Rock Family Panel Giriş</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="/Content/AdminLay/css/bootstrap.min.css" rel="stylesheet">
+    <!-- bootstrap theme -->
+    <link href="/Content/AdminLay/css/bootstrap-theme.css" rel="stylesheet">
+    <!--external css-->
+    <!-- font icon -->
+    <link href="/Content/AdminLay/css/elegant-icons-style.css" rel="stylesheet" />
+    <link href="/Content/AdminLay/css/font-awesome.css" rel="stylesheet" />
+    <!-- Custom styles -->
+    <link href="/Content/AdminLay/css/style.css" rel="stylesheet">
+    <link href="/Content/AdminLay/css/style-responsive.css" rel="stylesheet" />
+</head>
+<body>
+    <div>
+        <form class="login-form" method="post" action="/Admin/Login"/>
+        <div class="login-wrap">
+            @if (Session["adminid"] == null)
+            {
+                <p class=" alert">@ViewBag.Uyari</p>
+
+            }
+            <p class="login-img"><i class="icon_lock_alt"></i></p>
+            <div class="input-group">
+                <span class="input-group-addon"><i class="icon_profile"></i></span>
+                <input type="text" name="Email" class="form-control" placeholder="E-Posta" autofocus>
+            </div>
+            <div class="input-group">
+                <span class="input-group-addon"><i class="icon_key_alt"></i></span>
+                <input type="password" class="form-control" placeholder="Şifre" name="Password">
+            </div>
+
+
+            <button class="btn btn-primary  btn-lg btn-block" type="submit">Giris yap </button><br />
+           <button class="btn btn-outline-warning"><a class="btn-dark" href="/Home/Index/">Admin Değilseniz Siteye Gidin </a></button> 
+        </div>
+        </form>
+    </div>
+</body>
+</html>

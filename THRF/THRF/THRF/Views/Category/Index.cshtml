@@ -1,0 +1,37 @@
+﻿@model IEnumerable<THRF.Models.Model.Category>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+    <p>
+        @Html.ActionLink("Yeni Ekle", "Create")
+
+    </p>
+<table class="table">
+    <tr>
+        <th> Kategori Adı </th>
+        <th> Kategorinin Açıklaması</th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.CatName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CatExp)
+        </td>
+        <td>
+            @Html.ActionLink("Düzenle", "Edit", new { id = item.CatId }) |
+            @Html.ActionLink("Detaylar", "Details", new { id = item.CatId }) |
+            @Html.ActionLink("Sil", "Delete", new { id = item.CatId }) |
+
+        </td>
+    </tr>
+}
+
+</table>

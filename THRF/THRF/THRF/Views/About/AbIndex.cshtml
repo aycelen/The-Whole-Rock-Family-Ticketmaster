@@ -1,0 +1,31 @@
+﻿@model IEnumerable<THRF.Models.Model.About>
+
+@{
+    ViewBag.Title = "AbIndex";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+
+<table class="table table-bordered">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.AbExp)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.Raw(item.AbExp) 
+            @*kısaltıyoruz kı strong etıketı cıkmasın*@
+        </td>
+        <td>
+            @Html.ActionLink("Güncelle", "Edit", new { id=item.AboutId }) 
+       
+        </td>
+    </tr>
+}
+
+</table>
